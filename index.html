@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#161616">
+<title>Athlevo · book verified coaches, venues and events (coded prototype)</title>
+<meta name="description" content="Coded prototype of Athlevo: find and book coaches, venues and athletic events that fit your schedule.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <section class="phone" aria-label="Athlevo app">
+    <div class="status" aria-hidden="true"><b>9:41</b><span class="island"></span><span>●●●</span></div>
+    <div id="view" class="view"></div>
+    <nav class="tabs" id="tabs" aria-label="Primary">
+      <button type="button" data-tab="home" class="on" aria-label="Home"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></button>
+      <button type="button" data-tab="coaches" aria-label="Coaches"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></button>
+      <button type="button" data-tab="bookings" class="mid" aria-label="My bookings"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>
+      <button type="button" data-tab="events" aria-label="Events"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg></button>
+      <button type="button" data-tab="chat" aria-label="Chats"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></button>
+    </nav>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="homebar" aria-hidden="true"></div>
+  </section>
+
+  <aside class="side">
+    <div class="brand"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M20 86 L45 30 Q50 19 55 30 L80 86" fill="none" stroke="#AFB0FF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M33 72 L50 36" stroke="var(--bg,#161616)" stroke-width="6" stroke-linecap="round"/><circle cx="72" cy="16" r="10" fill="#FFDE21"/></svg><b>athlevo</b></div>
+    <p class="lede">Book verified coaches, venues and athletic events around <em>your</em> schedule.</p>
+    <p class="sub">Research found three blockers. The prototype answers each one in code:</p>
+    <ul class="facts">
+      <li><b>50%</b><span>struggled to find coaches or venues that fit their schedule.<em>Set when you are free once; every list ranks by open slots in that window.</em></span></li>
+      <li><b>35%</b><span>could not judge a coach's qualifications.<em>Credentials show as verified or self-reported, and feed a transparent trust score.</em></span></li>
+      <li><b>15%</b><span>lacked quality options nearby.<em>Distance, rating and reviews sit on every card, with directions one tap away.</em></span></li>
+    </ul>
+    <p class="fine"><a href="https://www.figma.com/proto/2yqeng4JQIHd8AiLudau7k/Athlevo-Application?content-scaling=fixed&kind=proto&node-id=717-9111&page-id=717%3A8048&scaling=scale-down&starting-point-node-id=717%3A9388" target="_blank" rel="noopener">Figma prototype ↗</a> · <a href="https://github.com/murtuzabuilds/athlevo">Code on GitHub</a> · designed and built by <a href="https://github.com/murtuzabuilds">Murtuza</a><br><small>Venues, coaches and prices are sample data.</small></p>
+  </aside>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
