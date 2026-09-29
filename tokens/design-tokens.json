@@ -1,0 +1,16 @@
+{
+  "$description": "Athlevo design tokens, from the Athlevo case study (W3C design-tokens format).",
+  "color": {
+    "lavender": { "$type": "color", "$value": "#AFB0FF", "$description": "Primary, active states, logo" },
+    "ink":      { "$type": "color", "$value": "#161616", "$description": "App background" },
+    "volt":     { "$type": "color", "$value": "#FFDE21", "$description": "Primary action, centre nav" },
+    "paper":    { "$type": "color", "$value": "#F6F6F6", "$description": "Text on dark" },
+    "grey":     { "$type": "color", "$value": "#6C6C6C", "$description": "Secondary text, inactive" }
+  },
+  "font": {
+    "ui": { "$type": "fontFamily", "$value": ["SF Pro Display", "-apple-system", "system-ui", "sans-serif"] },
+    "brand": { "$type": "fontFamily", "$value": ["DM Sans", "system-ui", "sans-serif"] },
+    "scale": { "$type": "dimension", "$value": ["12px", "14px", "16px", "18px", "24px", "36px"] }
+  },
+  "radius": { "card": { "$type": "dimension", "$value": "20px" }, "pill": { "$type": "dimension", "$value": "999px" } }
+}
