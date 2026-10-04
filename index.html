@@ -7,37 +7,45 @@
 <meta name="theme-color" content="#161616">
 <title>Athlevo · book verified coaches, venues and events (coded prototype)</title>
 <meta name="description" content="Coded prototype of Athlevo: find and book coaches, venues and athletic events that fit your schedule.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tokens/tokens.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="wrap">
   <section class="phone" aria-label="Athlevo app">
-    <div class="status" aria-hidden="true"><b>9:41</b><span class="island"></span><span>●●●</span></div>
-    <div id="view" class="view"></div>
-    <nav class="tabs" id="tabs" aria-label="Primary">
-      <button type="button" data-tab="home" class="on" aria-label="Home"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></button>
-      <button type="button" data-tab="coaches" aria-label="Coaches"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></button>
-      <button type="button" data-tab="bookings" class="mid" aria-label="My bookings"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>
-      <button type="button" data-tab="events" aria-label="Events"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg></button>
-      <button type="button" data-tab="chat" aria-label="Chats"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></button>
-    </nav>
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <div class="homebar" aria-hidden="true"></div>
+    <div class="bezel">
+      <div class="screen">
+        <div class="status" aria-hidden="true">
+          <b>9:41</b><span class="island"></span>
+          <span class="sys">
+            <svg viewBox="0 0 18 12" width="18" height="12"><rect y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.4" width="3" height="6.6" rx=".8"/><rect x="10" y="2.8" width="3" height="9.2" rx=".8"/><rect x="15" width="3" height="12" rx=".8"/></svg>
+            <svg viewBox="0 0 17 12" width="17" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M1.6 4.300a9.8 9.8 0 0 1 13.8 0M4 6.900a6.4 6.4 0 0 1 9 0"/><circle cx="8.5" cy="9.9" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <svg viewBox="0 0 27 13" width="27" height="13"><rect x=".5" y=".5" width="22" height="12" rx="3.8" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="19" height="9" rx="2.4"/><path d="M24.2 4.500v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2z" opacity=".45"/></svg>
+          </span>
+        </div>
+        <div id="view" class="view"></div>
+        <nav class="tabs" id="tabs" aria-label="Primary"></nav>
+        <div class="sheetwrap" id="sheet" hidden></div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <div class="homebar" aria-hidden="true"></div>
+      </div>
+    </div>
   </section>
 
   <aside class="side">
-    <div class="brand"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M20 86 L45 30 Q50 19 55 30 L80 86" fill="none" stroke="#AFB0FF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M33 72 L50 36" stroke="var(--bg,#161616)" stroke-width="6" stroke-linecap="round"/><circle cx="72" cy="16" r="10" fill="#FFDE21"/></svg><b>athlevo</b></div>
-    <p class="lede">Book verified coaches, venues and athletic events around <em>your</em> schedule.</p>
-    <p class="sub">Research found three blockers. The prototype answers each one in code:</p>
+    <svg class="logo" viewBox="4 8 188 218" role="img" aria-label="Athlevo"><mask id="athlevo-l" maskUnits="userSpaceOnUse" x="0" y="0" width="174" height="166"><g fill="none" stroke="#fff" stroke-width="65.73" stroke-linecap="round"><path d="M41.93 124.31L86.24 47.65"/><path d="M132.6 124.22L87.46 48.37"/></g><path d="M38.97 113.07L62.78 71.87A23.15 23.15 0 0 1 102.86 95.04L79.83 134.86" fill="none" stroke="#000" stroke-width="10.54" stroke-linecap="round"/><circle cx="115.76" cy="27.36" r="29" fill="#000"/></mask><g transform="translate(19 0)"><rect width="174" height="166" fill="#AFB0FF" mask="url(#athlevo-l)"/><circle cx="115.76" cy="27.36" r="18.18" fill="#FFDE21"/></g><path transform="translate(0 175)" fill="#F6F6F6" d="M15.64 48.31Q12.06 48.31 9.7 47.17Q7.34 46.03 6.23 44.07Q5.12 42.11 5.12 39.72Q5.12 37.16 6.4 35.2Q7.68 33.24 10.41 32.08Q13.14 30.91 17.29 30.91H24.23Q24.23 28.98 23.74 27.73Q23.26 26.48 22.18 25.85Q21.1 25.23 19.22 25.23Q17.23 25.23 15.87 26.02Q14.51 26.82 14.16 28.52H5.98Q6.26 25.45 8 23.18Q9.73 20.91 12.63 19.6Q15.53 18.29 19.28 18.29Q23.37 18.29 26.39 19.63Q29.4 20.96 31.08 23.52Q32.75 26.08 32.75 29.89V47.62H25.65L24.62 43.47Q24 44.56 23.15 45.44Q22.29 46.32 21.16 46.97Q20.02 47.62 18.66 47.97Q17.29 48.31 15.64 48.31ZM17.75 41.83Q19.11 41.83 20.13 41.37Q21.16 40.92 21.9 40.12Q22.63 39.32 23.12 38.27Q23.6 37.22 23.83 35.97V35.91H18.31Q16.89 35.91 15.95 36.28Q15.02 36.65 14.56 37.34Q14.11 38.02 14.11 38.93Q14.11 39.89 14.59 40.55Q15.07 41.2 15.9 41.51Q16.72 41.83 17.75 41.83ZM49.91 47.62Q46.78 47.62 44.39 46.63Q42 45.64 40.7 43.36Q39.39 41.09 39.39 37.16V26.08H34.5V18.97H39.39L40.3 10.9H47.92V18.97H55.25V26.08H47.92V37.28Q47.92 38.98 48.68 39.69Q49.45 40.41 51.33 40.41H55.25V47.62ZM58.75 47.62V6.69H67.28V23.07Q68.64 20.91 70.97 19.6Q73.3 18.29 76.43 18.29Q80.07 18.29 82.51 19.83Q84.96 21.36 86.21 24.29Q87.46 27.22 87.46 31.37V47.62H78.99V32.16Q78.99 28.98 77.65 27.22Q76.32 25.45 73.42 25.45Q71.71 25.45 70.29 26.31Q68.87 27.16 68.07 28.72Q67.28 30.29 67.28 32.45V47.62ZM91.12 47.62V6.69H99.65V47.62ZM118.08 48.31Q113.64 48.31 110.29 46.46Q106.93 44.61 105.03 41.29Q103.12 37.96 103.12 33.64Q103.12 29.21 105 25.74Q106.88 22.27 110.23 20.28Q113.59 18.29 118.02 18.29Q122.34 18.29 125.58 20.17Q128.82 22.04 130.67 25.25Q132.52 28.47 132.52 32.67Q132.52 33.24 132.49 33.95Q132.46 34.66 132.35 35.4H109.21V30.46H123.82Q123.7 28.07 122.08 26.62Q120.46 25.17 118.08 25.17Q116.26 25.17 114.78 26.02Q113.3 26.87 112.42 28.58Q111.54 30.29 111.54 32.9V34.61Q111.54 36.6 112.31 38.13Q113.07 39.67 114.52 40.52Q115.97 41.37 117.96 41.37Q119.84 41.37 121.06 40.6Q122.28 39.84 122.97 38.64H131.66Q130.87 41.37 128.93 43.56Q127 45.75 124.22 47.03Q121.43 48.31 118.08 48.31ZM142.15 47.62 131.75 18.97H140.73L147.38 39.61L154.04 18.97H162.9L152.56 47.62ZM176.49 48.31Q172.34 48.31 169.04 46.37Q165.74 44.44 163.81 41.06Q161.88 37.68 161.88 33.36Q161.88 28.92 163.81 25.54Q165.74 22.16 169.07 20.22Q172.39 18.29 176.49 18.29Q180.69 18.29 183.99 20.22Q187.29 22.16 189.22 25.54Q191.15 28.92 191.15 33.3Q191.15 37.68 189.22 41.06Q187.29 44.44 183.99 46.37Q180.69 48.31 176.49 48.31ZM176.49 40.92Q178.19 40.92 179.53 40.06Q180.86 39.21 181.66 37.51Q182.45 35.8 182.45 33.3Q182.45 30.8 181.66 29.09Q180.86 27.39 179.56 26.53Q178.25 25.68 176.54 25.68Q174.84 25.68 173.5 26.53Q172.16 27.39 171.37 29.09Q170.57 30.8 170.57 33.3Q170.57 35.8 171.37 37.51Q172.16 39.21 173.5 40.06Q174.84 40.92 176.49 40.92Z"/></svg>
+    <p class="lede">Book verified coaches, venues and athletic events <em>around your schedule.</em></p>
+    <p class="sub">Research found three blockers. The prototype answers each one with a rule you can read:</p>
     <ul class="facts">
-      <li><b>50%</b><span>struggled to find coaches or venues that fit their schedule.<em>Set when you are free once; every list ranks by open slots in that window.</em></span></li>
-      <li><b>35%</b><span>could not judge a coach's qualifications.<em>Credentials show as verified or self-reported, and feed a transparent trust score.</em></span></li>
-      <li><b>15%</b><span>lacked quality options nearby.<em>Distance, rating and reviews sit on every card, with directions one tap away.</em></span></li>
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 4h9v2.600c0 1.6-.9 3-2.3 3.800L12 12l-2.2-1.600A4.4 4.4 0 0 1 7.5 6.600zM7.5 20h9v-2.600c0-1.6-.9-3-2.3-3.800L12 12l-2.2 1.600a4.4 4.4 0 0 0-2.3 3.800z"/></svg></i><b>50%</b><span>struggled to find coaches or venues that fit their schedule.<em>Say when you are free once. Every list ranks by open slots in that window.</em></span></li>
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.4 19 6v5.400c0 4.3-2.9 7.6-7 9.2-4.1-1.6-7-4.9-7-9.200V6z"/><path d="m9 12 2.2 2.200L15.2 10"/></svg></i><b>35%</b><span>could not judge a coach's qualifications.<em>Credentials show as verified or self-reported and feed a trust score that shows its working.</em></span></li>
+      <li><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-10.600a6.5 6.5 0 0 0-13 0C5.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.3" r="2.2"/></svg></i><b>15%</b><span>lacked quality options nearby.<em>Distance, rating and reviews sit on every card, with directions one tap away.</em></span></li>
     </ul>
-    <p class="fine"><a href="https://www.figma.com/proto/2yqeng4JQIHd8AiLudau7k/Athlevo-Application?content-scaling=fixed&kind=proto&node-id=717-9111&page-id=717%3A8048&scaling=scale-down&starting-point-node-id=717%3A9388" target="_blank" rel="noopener">Figma prototype ↗</a> · <a href="https://github.com/murtuzabuilds/athlevo">Code on GitHub</a> · designed and built by <a href="https://github.com/murtuzabuilds">Murtuza</a><br><small>Venues, coaches and prices are sample data.</small></p>
+    <p class="fine"><a href="https://www.figma.com/proto/2yqeng4JQIHd8AiLudau7k/Athlevo-Application?content-scaling=fixed&kind=proto&node-id=717-9111&page-id=717%3A8048&scaling=scale-down&starting-point-node-id=717%3A9388" target="_blank" rel="noopener">Figma prototype ↗</a> · <a href="https://github.com/murtuzabuilds/athlevo">Code on GitHub</a> · designed and built by <a href="https://github.com/murtuzabuilds">Murtuza</a><br><small>Venues, coaches, reviews and prices are sample data. Matching and the trust score are fixed rules that run in your browser, payment and chat replies are simulated.</small></p>
   </aside>
 </main>
 <script type="module" src="app.js"></script>

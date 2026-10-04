@@ -1,16 +1,37 @@
 {
-  "$description": "Athlevo design tokens, from the Athlevo case study (W3C design-tokens format).",
+  "$description": "Athlevo design tokens, taken from the Athlevo case study boards (W3C design-tokens format). Colours marked 'board 15' are printed on the colour board; the rest are sampled from the UI boards.",
   "color": {
-    "lavender": { "$type": "color", "$value": "#AFB0FF", "$description": "Primary, active states, logo" },
-    "ink":      { "$type": "color", "$value": "#161616", "$description": "App background" },
-    "volt":     { "$type": "color", "$value": "#FFDE21", "$description": "Primary action, centre nav" },
-    "paper":    { "$type": "color", "$value": "#F6F6F6", "$description": "Text on dark" },
-    "grey":     { "$type": "color", "$value": "#6C6C6C", "$description": "Secondary text, inactive" }
+    "lavender":      { "$type": "color", "$value": "#AFB0FF", "$description": "Board 15. Primary: buttons, chips, back button, active nav, logo" },
+    "ink":           { "$type": "color", "$value": "#161616", "$description": "Board 15. App background, text on lavender and yellow" },
+    "volt":          { "$type": "color", "$value": "#FFDE21", "$description": "Board 15. Centre nav button, stars, logo dot, promo card" },
+    "paper":         { "$type": "color", "$value": "#F6F6F6", "$description": "Board 15. Text on dark, white pills" },
+    "grey":          { "$type": "color", "$value": "#6C6C6C", "$description": "Board 15. Secondary text, inactive icons" },
+    "card":          { "$type": "color", "$value": "#050505", "$description": "Sampled, boards 18, 19, 23. List cards, booking and payment rows, chat bubbles" },
+    "bar":           { "$type": "color", "$value": "#1F1F1F", "$description": "Sampled, boards 16, 18. Navigation bar, price bar, round event buttons" },
+    "field":         { "$type": "color", "$value": "#282828", "$description": "Sampled, board 18. Search field" },
+    "line":          { "$type": "color", "$value": "#1D1D1D", "$description": "Sampled, board 18. Dividers, outline of icon buttons" },
+    "lavender-active": { "$type": "color", "$value": "#6641EB", "$description": "Sampled, board 16. Pressed button" },
+    "lavender-off":  { "$type": "color", "$value": "#363648", "$description": "Sampled, boards 16, 20. Unselected segment" },
+    "lavender-off-line": { "$type": "color", "$value": "#45465E", "$description": "Sampled, boards 16, 20. Unselected segment outline" },
+    "board":         { "$type": "color", "$value": "#0D0D0D", "$description": "Sampled. Case study board ground, page background" },
+    "frame":         { "$type": "color", "$value": "#8E9BE0", "$description": "Sampled, board 18. Device frame rim" }
   },
   "font": {
-    "ui": { "$type": "fontFamily", "$value": ["SF Pro Display", "-apple-system", "system-ui", "sans-serif"] },
-    "brand": { "$type": "fontFamily", "$value": ["DM Sans", "system-ui", "sans-serif"] },
-    "scale": { "$type": "dimension", "$value": ["12px", "14px", "16px", "18px", "24px", "36px"] }
+    "ui":    { "$type": "fontFamily", "$value": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", "Arial", "sans-serif"], "$description": "Board 15: SF Pro in Regular, Medium and Semibold. Renders as SF Pro on Apple devices and Inter elsewhere" },
+    "brand": { "$type": "fontFamily", "$value": ["DM Sans", "-apple-system", "BlinkMacSystemFont", "Inter", "sans-serif"], "$description": "Board 17: DM Sans, the brand typeface behind the wordmark" },
+    "weight": { "regular": { "$type": "fontWeight", "$value": 400 }, "medium": { "$type": "fontWeight", "$value": 500 }, "semibold": { "$type": "fontWeight", "$value": 600 } },
+    "scale": { "$type": "dimension", "$value": ["12px", "14px", "16px", "18px", "24px", "36px"], "$description": "Board 15 type scale" }
   },
-  "radius": { "card": { "$type": "dimension", "$value": "20px" }, "pill": { "$type": "dimension", "$value": "999px" } }
+  "radius": {
+    "tile": { "$type": "dimension", "$value": "12px", "$description": "Rows, tiles, small cards" },
+    "card": { "$type": "dimension", "$value": "16px", "$description": "Hero images, promo cards, glass panels" },
+    "list": { "$type": "dimension", "$value": "20px", "$description": "List cards" },
+    "pill": { "$type": "dimension", "$value": "999px", "$description": "Buttons, chips, search field" }
+  },
+  "size": {
+    "control": { "$type": "dimension", "$value": "48px", "$description": "Round icon buttons, back button, avatar" },
+    "button":  { "$type": "dimension", "$value": "56px", "$description": "Primary button, centre nav button" },
+    "field":   { "$type": "dimension", "$value": "52px", "$description": "Search and message fields" },
+    "gutter":  { "$type": "dimension", "$value": "16px", "$description": "Screen side padding" }
+  }
 }

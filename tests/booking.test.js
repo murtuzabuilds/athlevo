@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { VENUES, COACHES } from '../src/data.js';
-import { seedBusy, slots, fits, trust, verified, overlap, rankVenues, rankCoaches, book, addDays } from '../src/booking.js';
+import { seedBusy, slots, fits, trust, verified, overlap, rankVenues, rankCoaches, book, addDays, openInWindow, trustParts, coachOpenSlots, coachWorks } from '../src/booking.js';
 
 const monday = new Date('2026-10-05T00:00:00');
 const pulse = VENUES.find(v => v.id === 'pulse');
@@ -60,4 +60,27 @@ test('seeded busy slots leave most of the day open', () => {
     const busy = [...seedBusy(v, d)].length;
     assert.ok(busy < n * 0.6, `${v.id} day ${i}: ${busy}/${n} busy`);
   }
+});
+
+test('trust parts add up to the trust score', () => {
+  for (const c of COACHES) {
+    const p = trustParts(c);
+    const sum = Math.max(0, Math.min(100, Math.round(p.creds + p.years + p.rating + p.sessions - p.penalty)));
+    assert.equal(sum, trust(c), c.id);
+    assert.equal(p.verified + p.selfReported, c.creds.length);
+  }
+});
+
+test('coach open slots stay inside the coach hours, the venue hours and your window', () => {
+  const now = new Date('2026-10-05T00:00:00');
+  for (const c of COACHES) {
+    const v = VENUES.find(x => x.id === c.venue);
+    const any = coachOpenSlots(c, v, 'any', monday, new Set(), 7, now);
+    const morning = coachOpenSlots(c, v, 'morning', monday, new Set(), 7, now);
+    assert.ok(any > 0, `${c.id} has open slots`);
+    assert.ok(morning <= any && any <= openInWindow(v, 'any', monday, new Set(), 7, now));
+  }
+  const karthik = COACHES.find(c => c.id === 'karthik'), shuttle = VENUES.find(v => v.id === 'shuttle');
+  assert.equal(coachOpenSlots(karthik, shuttle, 'weekend', monday, new Set(), 7, now), 0);
+  assert.ok(coachWorks(karthik, 2, 19) && !coachWorks(karthik, 3, 19));
 });

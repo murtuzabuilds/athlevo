@@ -96,3 +96,26 @@ export function book(booked, venue, slot) {
 export function directions(venue) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.name + ', ' + venue.area + ', Chennai')}`;
 }
+
+/** Is the coach working at this weekday (0 = Sunday) and hour? */
+export const coachWorks = (coach, day, hour) => coach.windows.days.includes(day) && coach.windows.hours.includes(hour);
+
+/** Free, future slots at the coach's venue that the coach works and that sit inside the learner's window, over the next n days. */
+export function coachOpenSlots(coach, venue, window, from, bookedAll = new Set(), n = 7, now = from) {
+  let c = 0;
+  for (let i = 0; i < n; i++) {
+    const d = addDays(from, i), busy = new Set([...seedBusy(venue, d), ...bookedAll]);
+    for (const s of slots(venue, d, busy, now)) if (!s.taken && !s.past && coachWorks(coach, d.getDay(), s.hour) && fits(window, d.getDay(), s.hour)) c++;
+  }
+  return c;
+}
+
+/** The working behind trust(): each part of the score, so the profile can show why a coach scores what they do. */
+export function trustParts(coach) {
+  const v = coach.creds.filter(c => c.verified).length, u = coach.creds.length - v;
+  return {
+    verified: v, selfReported: u,
+    creds: Math.min(40, v * 15), years: Math.min(20, coach.years * 2),
+    rating: Math.max(0, (coach.rating - 4) * 20), sessions: Math.min(20, coach.sessions / 50), penalty: u * 3,
+  };
+}

@@ -1,2 +1,10 @@
-/* Generated from design-tokens.json: Athlevo brand */
-:root{--lav:#AFB0FF;--lav-d:#7C7EF5;--bg:#161616;--bg2:#1F1F21;--bg3:#2A2A2E;--volt:#FFDE21;--paper:#F6F6F6;--grey:#6C6C6C;--grey2:#9A9AA0;--ui:"SF Pro Display",-apple-system,system-ui,sans-serif;--brand:"DM Sans",system-ui,sans-serif;--r:20px}
+/* Generated from design-tokens.json: Athlevo brand, taken from the case study boards */
+:root{
+  --lav:#AFB0FF;--ink:#161616;--volt:#FFDE21;--paper:#F6F6F6;--grey:#6C6C6C;
+  --card:#050505;--bar:#1F1F1F;--field:#282828;--line:#1D1D1D;
+  --lav-active:#6641EB;--lav-off:#363648;--lav-off-line:#45465E;--board:#0D0D0D;--frame:#8E9BE0;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  --brand:"DM Sans",-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
+  --r-tile:12px;--r-card:16px;--r-list:20px;--r-pill:999px;
+  --control:48px;--button:56px;--field-h:52px;--gutter:16px;
+}
