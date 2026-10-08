@@ -32,6 +32,19 @@ The Figma prototype was validated with **30 Maze responses: 90% task success boo
 
 ![Slot booking](docs/slot-booking.png)
 
+## More screens
+
+| | |
+|---|---|
+| ![Chats](docs/chats.webp) | ![Coaches](docs/coaches.webp) |
+| Chats | Coaches |
+| ![Venues](docs/venue.webp) |  |
+| Venues |  |
+
+<img src="docs/phone.webp" width="300" alt="Home on a phone">
+
+Home on a phone.
+
 ## Run it
 
 ```bash
