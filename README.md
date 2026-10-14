@@ -2,7 +2,7 @@
 
 **Book verified coaches, venues and athletic events around your schedule.** Athlevo is a platform for athletes that makes the hard part, finding the right coach or venue at a time that works, take one tap instead of ten calls. This repo is the coded, clickable prototype of the Athlevo UX/UI case study, built on its design system.
 
-**[Open the coded prototype →](https://murtuzabuilds.github.io/athlevo/)** &nbsp;·&nbsp; **[Figma prototype ↗](https://www.figma.com/proto/2yqeng4JQIHd8AiLudau7k/Athlevo-Application?content-scaling=fixed&kind=proto&node-id=717-9111&page-id=717%3A8048&scaling=scale-down&starting-point-node-id=717%3A9388)**
+**[Open the coded prototype →](https://murtuzabuilds.com/athlevo/)** &nbsp;·&nbsp; **[Figma prototype ↗](https://www.figma.com/proto/2yqeng4JQIHd8AiLudau7k/Athlevo-Application?content-scaling=fixed&kind=proto&node-id=717-9111&page-id=717%3A8048&scaling=scale-down&starting-point-node-id=717%3A9388)**
 
 ![Athlevo home](docs/home.png)
 
